@@ -6,12 +6,12 @@ class MP3Importer
     @path = path
   end
   
-  def files(file)
-    dir[path]
+  def files
+    Dir[@path+"/*.mp3"].map { |file| file.split("/").last }
   end
-  
-  def import()
-    
+
+  def import
+    files.each { |file| Song.new_by_filename(file) }
   end
   
   
