@@ -7,7 +7,7 @@ class MP3Importer
   end
   
   def files(file)
-    dir[path].select{|file| file.match(/\z(.mp3)/)}
+    dir[path]
   end
   
   def import()
